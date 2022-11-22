@@ -8,7 +8,8 @@ import { AuthMiddleware } from '@app/middlewares/auth.middleware';
 
 @Module({
   imports: [TypeOrmModule.forRoot(ormConfig), UserModule, IssueModule],
-  controllers: [IssueController],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {
   configure(consumer: MiddlewareConsumer) {
