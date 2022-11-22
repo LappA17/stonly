@@ -27,7 +27,9 @@ To start working with PostgreSQL 🐘 you should write next commands:
 2) 💯 then login to get access token(save this token, you will need it for registration)
 3) 🚚 now you can create any issue
 
-❗️Remember to create some issue you must be Authorized. If you use postman: go to Headers -> key: Authorization ->
+❗️Remember to create some issue you must be Authorized.
+If you use postman: go to Headers ->
+key: Authorization ->
 value: Token <token which you get in registration>
 
 ## Features
