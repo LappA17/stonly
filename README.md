@@ -8,3 +8,5 @@ Then we write in psql:
 create database stonly;
 create user stonly with encrypted password '123';
 grant all privileges on database stonly to stonly;
+
+Authorization Token <token>

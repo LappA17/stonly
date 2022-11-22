@@ -60,14 +60,15 @@ export class IssueService {
     return this.issueRepository.save(issue);
   }
 
-  async findBySlugAndDelete(currentUserId: number, slug: string): Promise<DeleteResult> {
+  async deleteIssue(slug: string, currentUserId: number): Promise<DeleteResult> {
     const issue = await this.findBySlug(slug);
-    if (!issue) throw new HttpException(`No issue found with this slug`, HttpStatus.NOT_FOUND);
-    if (issue.author.id !== currentUserId)
-      throw new HttpException(
-        `This User didn't create this issue, no permission to delete`,
-        HttpStatus.FORBIDDEN,
-      );
+    if (!issue) {
+      throw new HttpException('Issue does not exist', HttpStatus.NOT_FOUND);
+    }
+    if (issue.author.id !== currentUserId) {
+      throw new HttpException('You are not an author', HttpStatus.FORBIDDEN);
+    }
+
     return await this.issueRepository.delete({ slug });
   }
 

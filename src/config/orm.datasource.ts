@@ -1,4 +1,4 @@
 import { DataSource } from 'typeorm';
-import ormConfig from '@app/config/orm.config';
+import ormConfig from '@app/orm.config';
 
 export default new DataSource(ormConfig);

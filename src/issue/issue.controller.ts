@@ -62,7 +62,7 @@ export class IssueController {
 
   @Delete(':slug')
   @UseGuards(AuthGuard)
-  async deleteIssue(@User('id') currentUserId: number, @Param('slug') slug: string): Promise<any> {
-    return this.issueService.findBySlugAndDelete(currentUserId, slug);
+  async deleteIssue(@User('id') currentUserId: number, @Param('slug') slug: string) {
+    return this.issueService.deleteIssue(slug, currentUserId);
   }
 }

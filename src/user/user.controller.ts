@@ -13,7 +13,7 @@ import { BackendValidationPipe } from '@app/shared/pipes/backendValidation.pipe'
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  @Post('create')
+  @Post('register')
   @UsePipes(new BackendValidationPipe())
   async createUser(@Body('user') createUserDto: CreateUserDto): Promise<UserResponseInterface> {
     const user = await this.userService.createUser(createUserDto);
