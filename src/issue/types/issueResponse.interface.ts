@@ -1,6 +1,5 @@
-import { IssueType } from '@app/issue/types/issue.type';
+import { IssueEntity } from '@app/issue/models/issue.entity';
 
 export interface IssueResponseInterface {
-  issues: IssueType[];
-  issueCount: number;
+  issue: IssueEntity;
 }
