@@ -1,14 +1,21 @@
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Test, TestingModule } from '@nestjs/testing';
-import { UserService } from './user.service';
-import { UserEntity } from './models/user.entity';
+
 import { Repository } from 'typeorm';
+import { UserService } from '@app/user/user.service';
+import { UserEntity } from '@app/user/models/user.entity';
 
 describe('UserService', () => {
   let service: UserService;
   let userRepository: Repository<UserEntity>;
 
   const USER_REPOSITORY_TOKEN = getRepositoryToken(UserEntity);
+
+  const createUserDtoTest = {
+    username: 'ruslanpostoiuk171',
+    email: 'ruslanpostoiuk171@gmail.com',
+    password: '123',
+  };
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -32,15 +39,6 @@ describe('UserService', () => {
   });
 
   it('userRepository should be defined', () => {
-    expect(service).toBeDefined();
+    expect(userRepository).toBeDefined();
   });
-
-  /*
-        it('save success', async () => {});
-      
-        it('save failed', async () => {});
-      
-        it('findOne success', async () => {});
-      
-        it('findOne failed', async () => {}); */
 });

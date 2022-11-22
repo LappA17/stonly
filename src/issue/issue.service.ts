@@ -2,9 +2,10 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { DataSource, DeleteResult, getRepository, Repository } from 'typeorm';
 import slugify from 'slugify';
+
 import { IssueEntity } from '@app/issue/models/issue.entity';
-import { IssuesResponseInterface } from '@app/issue/types/issuesResponse.interface';
 import { UserEntity } from '@app/user/models/user.entity';
+import { IssuesResponseInterface } from '@app/issue/types/issuesResponse.interface';
 import { CreateIssueDto } from '@app/issue/dto/create-issue.dto';
 import { IssueResponseInterface } from '@app/issue/types/issueResponse.interface';
 

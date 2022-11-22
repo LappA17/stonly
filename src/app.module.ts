@@ -1,8 +1,8 @@
 import { MiddlewareConsumer, Module, RequestMethod } from '@nestjs/common';
-import { UserModule } from './user/user.module';
-import { IssueModule } from './issue/issue.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import ormConfig from '@app/orm.config';
+import { UserModule } from '@app/user/user.module';
+import { IssueModule } from '@app/issue/issue.module';
 import { AuthMiddleware } from '@app/middlewares/auth.middleware';
 
 @Module({

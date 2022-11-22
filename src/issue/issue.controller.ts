@@ -10,14 +10,15 @@ import {
   UseGuards,
   UsePipes,
 } from '@nestjs/common';
+
 import { User } from '@app/user/decorators/user.decorator';
-import { BackendValidationPipe } from '@app/shared/pipes/backendValidation.pipe';
 import { IssueService } from '@app/issue/issue.service';
 import { IssuesResponseInterface } from '@app/issue/types/issuesResponse.interface';
-import { AuthGuard } from '@app/guards/auth.guard';
-import { UserEntity } from '@app/user/models/user.entity';
-import { CreateIssueDto } from '@app/issue/dto/create-issue.dto';
 import { IssueResponseInterface } from '@app/issue/types/issueResponse.interface';
+import { AuthGuard } from '@app/guards/auth.guard';
+import { BackendValidationPipe } from '@app/shared/pipes/backendValidation.pipe';
+import { CreateIssueDto } from '@app/issue/dto/create-issue.dto';
+import { UserEntity } from '@app/user/models/user.entity';
 
 @Controller('issues')
 export class IssueController {

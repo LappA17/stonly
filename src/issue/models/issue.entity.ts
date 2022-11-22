@@ -1,6 +1,7 @@
 import { BeforeUpdate, Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
-import { IssueStates } from '../types/issue.states';
-import { UserEntity } from '../../user/models/user.entity';
+
+import { IssueStates } from '@app/issue/types/issue.states';
+import { UserEntity } from '@app/user/models/user.entity';
 
 @Entity({ name: 'issues' })
 export class IssueEntity {

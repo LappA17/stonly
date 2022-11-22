@@ -3,7 +3,7 @@ if (!process.env.IS_TS_NODE) {
 }
 
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import { AppModule } from '@app/app.module';
 
 async function bootstrap() {
   const PORT = process.env.PORT || 8001;

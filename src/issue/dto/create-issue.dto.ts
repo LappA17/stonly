@@ -1,4 +1,5 @@
 import { IsNotEmpty, IsString, IsEnum } from 'class-validator';
+
 import { IssueStates } from '@app/issue/types/issue.states';
 
 export class CreateIssueDto {
