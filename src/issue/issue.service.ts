@@ -44,20 +44,20 @@ export class IssueService {
     return { issues, issuesCount };
   }
 
-  async createIssue(currentUser: UserEntity, createIssueDto: CreateIssueDto): Promise<IssueEntity> {
-    const issue = new IssueEntity();
-    Object.assign(issue, createIssueDto);
-    issue.slug = this.getSlug(createIssueDto.title);
-    issue.author = currentUser;
-    return this.issueRepository.save(issue);
-  }
-
   async findBySlug(slug: string): Promise<IssueEntity> {
     const issue = await this.issueRepository.findOne({
       where: { slug },
     });
     if (!issue) throw new HttpException(`No issue found with this slug`, HttpStatus.NOT_FOUND);
     return issue;
+  }
+
+  async createIssue(currentUser: UserEntity, createIssueDto: CreateIssueDto): Promise<IssueEntity> {
+    const issue = new IssueEntity();
+    Object.assign(issue, createIssueDto);
+    issue.slug = this.getSlug(createIssueDto.title);
+    issue.author = currentUser;
+    return this.issueRepository.save(issue);
   }
 
   async findBySlugAndDelete(currentUserId: number, slug: string): Promise<DeleteResult> {

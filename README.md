@@ -1,6 +1,10 @@
 НАПИСАТЬ РИДМИ КАК ЗАПУСТИТЬ
-ДОБАВИТЬ УСЛОВИЯ ДЛЯ СТЕЙТА
-попробывать в миграции добавить всякие параметры типа unique и тд
-обработать ошибки как в медиумклон с обьектом
-напиши в ридми в каком формате передавать данніе типа
-валидацию на енам добавить
+напиши в ридми в каком формате передавать данніе типа валидацию на енам добавить
+
+To start working with PostgresQl you should write sudo -u postgres psql if you want to work in psql or run pg service
+local on your computer
+
+Then we write in psql:
+create database stonly;
+create user stonly with encrypted password '123';
+grant all privileges on database stonly to stonly;
