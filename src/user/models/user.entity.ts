@@ -1,6 +1,6 @@
 import { BeforeInsert, Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { hash } from 'bcrypt';
-import { IssueEntity } from '@app/issue/models/issue.entity';
+import { IssueEntity } from '../../issue/models/issue.entity';
 
 @Entity({ name: 'users' })
 export class UserEntity {
