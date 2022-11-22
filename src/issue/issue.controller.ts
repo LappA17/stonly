@@ -25,6 +25,7 @@ export class IssueController {
   constructor(private readonly issueService: IssueService) {}
 
   @Get()
+  @UseGuards(AuthGuard)
   async findAll(
     @User('id') currentUserId: number,
     @Query() query: any,
