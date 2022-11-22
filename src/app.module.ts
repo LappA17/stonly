@@ -1,6 +1,5 @@
 import { MiddlewareConsumer, Module, RequestMethod } from '@nestjs/common';
 import { UserModule } from './user/user.module';
-import { IssueController } from './issue/issue.controller';
 import { IssueModule } from './issue/issue.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import ormConfig from '@app/orm.config';
